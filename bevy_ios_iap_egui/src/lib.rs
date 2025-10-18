@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use bevy_egui::{egui, EguiContexts, EguiPlugin};
+use bevy_egui::{EguiContexts, EguiPrimaryContextPass, egui};
 use bevy_ios_iap::{
     IosIapEvents, IosIapProduct, IosIapProductsResponse, IosIapResponse, IosIapTransaction,
     IosIapTransactionResponse,
@@ -32,10 +32,6 @@ pub struct IosIapEguiPlugin {
 
 impl Plugin for IosIapEguiPlugin {
     fn build(&self, app: &mut App) {
-        if !app.is_plugin_added::<EguiPlugin>() {
-            app.add_plugins(EguiPlugin::default());
-        }
-
         app.init_resource::<DebugUiResource>();
         app.init_resource::<DebugIosIap>();
 
@@ -44,7 +40,7 @@ impl Plugin for IosIapEguiPlugin {
             ..default()
         });
 
-        app.add_systems(Update, update);
+        app.add_systems(EguiPrimaryContextPass, update);
         app.add_systems(
             Update,
             process_iap_responses.run_if(on_message::<IosIapResponse>),
