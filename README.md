@@ -65,7 +65,7 @@ or
 
 ```toml
 # always pin to the same exact version you also of the Swift package
-bevy_ios_iap = { version = "=0.9" }
+bevy_ios_iap = { version = "=0.8" }
 ```
 
 ### 3. Setup Plugin
@@ -158,8 +158,7 @@ fn process_iap_events(
 
 |bevy|crate|
 |---|---|
-|0.18|0.9,main|
-|0.17|0.8|
+|0.17|0.8,main|
 |0.16|0.6,0.7|
 |0.15|0.5|
 |0.14|0.3,0.4|

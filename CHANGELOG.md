@@ -7,17 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-## [0.9.0] - 2026-01-17
-
-### Changed
-* upgrade to bevy `0.18`
-
-## [0.8.0] - 2025-10-18
-
-### Fixed
-* upgrade to bevy `0.17`
-* signatures of *Triggers* (now called `Event`) changed to accomodate for `entity` field, so most are not tuples anymore but contain a `response` field (example: `On<Products>`)
-
 ## [0.7.0] - 2025-04-26
 
 ### Fixed
